@@ -18,15 +18,16 @@
     const cookie = document.getElementById("cookie");
     const cookieText = document.getElementById("cookie-text");
 
-    cookie.addEventListener("click", function() {
+    function resetScale() {
+      cookie.style.transform = "scale(1)";
+    }
+
+    function animateCookie() {
       cookie.style.transform = "scale(0.9)";
-
-      // Set timeout to revert to original scale
-      setTimeout(function() {
-        cookie.style.transform = "scale(1)";
-      }, 100); // Adjust time as needed
-    });
-
+    
+      setTimeout(resetScale, 100);
+    }
+    
     let amountCookies = 0;
     let addCookies = 1;
     function addCookie() {
