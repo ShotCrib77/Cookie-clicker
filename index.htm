@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Avenir&display=swap">
+  <link rel="icon" type="image/x-icon" href="images/Cookie-Edited.png">
+  <title>Cookie Clicker</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <main class="center-align">
+    <img id="cookie" src="images/Cookie-Edited.png" alt="Cookie" draggable="false">
+    <span id="cookie-text">Cookies: 0</span>
+  </main>
+
+  <script>
+    const cookie = document.getElementById("cookie");
+    const cookieText = document.getElementById("cookie-text");
+
+    cookie.addEventListener("click", function() {
+      cookie.style.transform = "scale(0.9)";
+
+      // Set timeout to revert to original scale
+      setTimeout(function() {
+        cookie.style.transform = "scale(1)";
+      }, 100); // Adjust time as needed
+    });
+
+    let amountCookies = 0;
+    let addCookies = 1;
+    function addCookie() {
+      amountCookies += addCookies;
+      cookieText.textContent = "Cookies: " + amountCookies
+    };
+
+  </script>
+</body>
+</html>
